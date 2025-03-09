@@ -1,0 +1,91 @@
+import itertools
+
+def decrypt_monoalphabetic(ciphertext, key):
+    alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    decrypted_text = ""
+    
+    for char in ciphertext:
+        if char in alphabet:
+            decrypted_text += key[alphabet.index(char)]
+        else:
+            decrypted_text += char  # Keep spaces or punctuation unchanged
+    return decrypted_text
+
+def brute_force_monoalphabetic(ciphertext):
+    alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+    possible_keys = itertools.permutations(alphabet)  # Generate all possible key permutations
+    
+    for key in possible_keys:
+        key = "".join(key)
+        decrypted_text = decrypt_monoalphabetic(ciphertext, key)
+        print(f"Key: {key} -> Decrypted Text: {decrypted_text}")
+        
+        #task2
+        from collections import Counter
+
+def frequency_analysis(ciphertext):
+    ciphertext = ciphertext.upper()
+    letter_counts = Counter(filter(str.isalpha, ciphertext))  # Count letter frequencies
+    sorted_letters = [pair[0] for pair in letter_counts.most_common()]
+    
+    # Standard English letter frequency (ETAOIN SHRDLU)
+    english_frequency = "ETAOINSHRDLCUMWFGYPBVKJXQZ"
+
+    # Create a mapping
+    decryption_map = {cipher_letter: english_frequency[i] for i, cipher_letter in enumerate(sorted_letters)}
+    
+    decrypted_text = "".join(decryption_map.get(char, char) for char in ciphertext)  # Substitute based on mapping
+
+    print("Decryption Map:", decryption_map)
+    return decrypted_text
+
+   # task3 
+import numpy as np
+
+def generate_playfair_matrix(keyword):
+    keyword = "".join(dict.fromkeys(keyword.upper().replace("J", "I")))  # Remove duplicates, replace J with I
+    alphabet = "ABCDEFGHIKLMNOPQRSTUVWXYZ"
+    matrix = list(keyword) + [c for c in alphabet if c not in keyword]
+    
+    return np.array(matrix).reshape(5, 5)
+
+def find_position(matrix, letter):
+    for row in range(5):
+        for col in range(5):
+            if matrix[row, col] == letter:
+                return row, col
+
+def playfair_encrypt_decrypt(text, matrix, encrypt=True):
+    text = text.upper().replace("J", "I").replace(" ", "")
+    if len(text) % 2 != 0:
+        text += "X"  # Padding
+
+    result = []
+    for i in range(0, len(text), 2):
+        a, b = text[i], text[i + 1]
+        row_a, col_a = find_position(matrix, a)
+        row_b, col_b = find_position(matrix, b)
+
+        if row_a == row_b:
+            col_a = (col_a + 1) % 5 if encrypt else (col_a - 1) % 5
+            col_b = (col_b + 1) % 5 if encrypt else (col_b - 1) % 5
+        elif col_a == col_b:
+            row_a = (row_a + 1) % 5 if encrypt else (row_a - 1) % 5
+            row_b = (row_b + 1) % 5 if encrypt else (row_b - 1) % 5
+        else:
+            col_a, col_b = col_b, col_a
+
+        result.append(matrix[row_a, col_a])
+        result.append(matrix[row_b, col_b])
+
+    return "".join(result)
+
+# Example Usage:
+keyword = "KEYWORD"
+plaintext = "HELLO"
+
+matrix = generate_playfair_matrix(keyword)
+ciphertext = playfair_encrypt_decrypt(plaintext, matrix, encrypt=True)
+decrypted_text = playfair_encrypt_decrypt(ciphertext, matrix, encrypt=False)
+
+
