@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree Information Table</title>
+</head>
+<body>
+
+    
+    <table border="1">
+        <tr>
+            <th></th>
+            <th>Pine</th>
+            <th>Maple</th>
+            <th>Oak</th>
+            <th>Fir</th>
+        </tr>
+        <tr>
+            <td>Average Height</td>
+            <td>50 ft</td>
+            <td>45 ft</td>
+            <td>60 ft</td>
+            <td>55 ft</td>
+        </tr>
+        <tr>
+            <td>Average Width</td>
+            <td>20 ft</td>
+            <td>25 ft</td>
+            <td>30 ft</td>
+            <td>22 ft</td>
+        </tr>
+        <tr>
+            <td>Typical Life Span</td>
+            <td>100 years</td>
+            <td>120 years</td>
+            <td>200 years</td>
+            <td>80 years</td>
+        </tr>
+        <tr>
+            <td>Leaf Type</td>
+            <td>Needle</td>
+            <td>Broadleaf</td>
+            <td>Broadleaf</td>
+            <td>Needle</td>
+        </tr>
+    </table>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tree Information Table</title>
+</head>
+<body>
+
+    
+    <table border="1">
+        <tr>
+            <th></th>
+            <th>Pine</th>
+            <th>Maple</th>
+            <th>Oak</th>
+            <th>Fir</th>
+        </tr>
+        <tr>
+            <td>Average Height</td>
+            <td>50 ft</td>
+            <td>45 ft</td>
+            <td>60 ft</td>
+            <td>55 ft</td>
+        </tr>
+        <tr>
+            <td>Average Width</td>
+            <td>20 ft</td>
+            <td>25 ft</td>
+            <td>30 ft</td>
+            <td>22 ft</td>
+        </tr>
+        <tr>
+            <td>Typical Life Span</td>
+            <td>100 years</td>
+            <td>120 years</td>
+            <td>200 years</td>
+            <td>80 years</td>
+        </tr>
+        <tr>
+            <td>Leaf Type</td>
+            <td>Needle</td>
+            <td>Broadleaf</td>
+            <td>Broadleaf</td>
+            <td>Needle</td>
+        </tr>
+    </table>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Form</title>
+</head>
+<body>
+
+    <h2>Order Form</h2>
+    <form>
+        
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+
+        
+        <p>Select the items you want to purchase:</p>
+        <input type="checkbox" id="bulb1" name="bulb1" value="2.39">
+        <label for="bulb1">Four 25-watt light bulbs for $2.39</label><br>
+
+        <input type="checkbox" id="bulb2" name="bulb2" value="4.29">
+        <label for="bulb2">Eight 25-watt light bulbs for $4.29</label><br>
+
+        <input type="checkbox" id="bulb3" name="bulb3" value="3.95">
+        <label for="bulb3">Four 25-watt long-life light bulbs for $3.95</label><br>
+
+        <input type="checkbox" id="bulb4" name="bulb4" value="7.49">
+        <label for="bulb4">Eight 25-watt long-life light bulbs for $7.49</label><br><br>
+
+        
+        <p>Select your payment method:</p>
+        <input type="radio" id="visa" name="payment" value="Visa">
+        <label for="visa">Visa</label><br>
+
+        <input type="radio" id="mastercard" name="payment" value="MasterCard">
+        <label for="mastercard">Master Card</label><br>
+
+        <input type="radio" id="discover" name="payment" value="Discover">
+        <label for="discover">Discover</label><br><br>
+
+        
+        <input type="submit" value="Submit">
+    </form>
+    <br>
+    <video controls autoplay>
+        <source src="v.mp4" type="video/mp3">
+    </video>
+
+</body>
+</html>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nested Ordered List of Cars</title>
+    <style>
+        
+        ol {
+            font-weight: bold;
+        }
+
+      
+        .compact {
+            background-color: pink;
+            padding: 10px;
+        }
+        .midsize {
+            background-color: blue;
+            color: white;
+            padding: 10px;
+        }
+        .sports {
+            background-color: red;
+            color: white;
+            padding: 10px;
+        }
+
+      
+        .middle-list {
+            font-weight: normal;
+            font-variant: small-caps;
+        }
+
+        
+        .inner-list {
+            font-weight: normal;
+            list-style-type: decimal;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Car Categories and Models</h2>
+
+    <ol>
+        
+        <li class="compact">COMPACT CARS
+            <ol class="middle-list" type="I">
+                <li>Two Door
+                    <ol class="inner-list">
+                        <li>Honda Civic</li>
+                        <li>Ford Focus</li>
+                        <li>Volkswagen Golf</li>
+                    </ol>
+                </li>
+                <li>Four Door
+                    <ol class="inner-list">
+                        <li>Toyota Corolla</li>
+                        <li>Hyundai Elantra</li>
+                        <li>Chevrolet Cruze</li>
+                    </ol>
+                </li>
+            </ol>
+        </li>
+
+       
+        <li class="midsize">MIDSIZE CARS
+            <ol class="middle-list" type="I">
+                <li>Two Door
+                    <ol class="inner-list">
+                        <li>BMW 4 Series</li>
+                        <li>Mercedes-Benz C-Class Coupe</li>
+                        <li>Audi A5</li>
+                    </ol>
+                </li>
+                <li>Four Door
+                    <ol class="inner-list">
+                        <li>Toyota Camry</li>
+                        <li>Honda Accord</li>
+                        <li>Nissan Altima</li>
+                    </ol>
+                </li>
+            </ol>
+        </li>
+
+        
+        <li class="sports">SPORTS CARS
+            <ol class="middle-list" type="I">
+                <li>Coupe
+                    <ol class="inner-list">
+                        <li>Chevrolet Camaro</li>
+                        <li>Ford Mustang</li>
+                        <li>Dodge Challenger</li>
+                    </ol>
+                </li>
+                <li>Convertible
+                    <ol class="inner-list">
+                        <li>Porsche 911</li>
+                        <li>Mazda MX-5 Miata</li>
+                        <li>BMW Z4</li>
+                    </ol>
+                </li>
+            </ol>
+        </li>
+    </ol>
+
+</body>
+</html>
